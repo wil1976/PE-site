@@ -2,12 +2,18 @@ body{
     background-color: rgb(235, 233, 233);
 }
 
-.container {
-    border-radius: 15px;
-    box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.144);
-}
 
-.servico{
-    display: flex;
-    align-items: center;
-}
+/* Centralizar o título principal e adicionar espaçamento */
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Ajustar a imagem para preencher a largura do card */
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  
