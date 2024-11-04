@@ -8,11 +8,19 @@ body{
     font-size: 2rem;
     margin-bottom: 20px;
   }
+
+  .main{
+    margin-top: 20px;
+  }
   
   /* Ajustar a imagem para preencher a largura do card */
   .card-img-top {
     width: 100%;
     height: auto;
+  }
+
+  .container {
+    margin-top: 50px;
   }
 
   .carousel-item img {
