@@ -3,15 +3,45 @@ body{
 }
 
 
-/* Centralizar o título principal e adicionar espaçamento */
-.main-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
+/* Estilos Gerais da Seção */
+.main {
+  background-color: #f8f9fa; /* Fundo claro para contraste */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 8px; /* Bordas suaves */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin-top: 30px;
+}
 
-  .main{
-    margin-top: 30px;
-  }
+/* Estilo do Título */
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Linha decorativa abaixo do título */
+.main-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #007bff;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* Estilo do Parágrafo */
+.main-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
   
   /* Ajustar a imagem para preencher a largura do card */
   .card-img-top {
