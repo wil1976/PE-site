@@ -1,23 +1,27 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Captura os dados do formulário
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
     $mensagem = $_POST['mensagem'];
 
-    // Configura o e-mail de destino e o conteúdo do e-mail
-    $to = "gustavo@peservico.com.br"; // Substitua pelo seu endereço de e-mail
+    // Configurações do e-mail para o cliente
+    $to = "gustavo.wilken@gmail.com"; // E-mail principal que recebe os dados
     $subject = "Nova mensagem de contato de $nome";
-    $body = "Nome: $nome\nEmail: $email\n\nMensagem:\n$mensagem";
+    $body = "Nome: $nome\nEmail: $email\nTelefone: $telefone\n\nMensagem:\n$mensagem";
     $headers = "From: $email";
 
-    // Tenta enviar o e-mail
+    // Envia o e-mail para o cliente
     if (mail($to, $subject, $body, $headers)) {
+        // Confirmação para o próprio usuário
+        $subjectUser = "Confirmação de recebimento da sua mensagem";
+        $bodyUser = "Olá $nome, recebemos sua mensagem com os dados a seguir:\n\nNome: $nome\nEmail: $email\nTelefone: $telefone\nMensagem:\n$mensagem\n\nObrigado pelo contato!";
+        mail($email, $subjectUser, $bodyUser, "From: seu_email@dominio.com");
+
         // Redireciona para a página de sucesso
         header("Location: sucesso.html");
-        exit();
+        exit;
     } else {
-        // Mostra uma mensagem de erro se o e-mail não foi enviado
         echo "Houve um erro ao enviar sua mensagem. Tente novamente.";
     }
 }
